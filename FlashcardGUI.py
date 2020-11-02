@@ -34,18 +34,10 @@ label1 = tk.Label(root, text=answers[i], fg='green', font=('helvetica', 20, 'bol
 label2= tk.Label(root, text=questions[i], fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
 canvas1.create_window(750,100, window=label2)
 
-
-# button1 = tk.Button(text='Answer',command=showAns, bg='brown',fg='white')
-# canvas1.create_window(150, 150, window=button1)
-
-# button2 = tk.Button(text="Next", command=newRand)
-# canvas1.create_window(200, 150, window=button2)
-
 def rightClick(_):
     newRand()
 def downClick(_):
     showAns()
-
 
 root.bind('<Right>', rightClick)
 root.bind('<Down>', downClick)
