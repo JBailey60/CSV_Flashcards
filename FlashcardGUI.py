@@ -1,11 +1,14 @@
 import tkinter as tk
-from tkinter import Label
+from tkinter import Label, PhotoImage
 import pandas
 import random
 
 root= tk.Tk()
 
 canvas1 = tk.Canvas(root, width = 1500, height = 700)
+bgImage = PhotoImage(file = "kyleeQuizlet.png")
+background_label = Label(root, image=bgImage)
+background_label.place(x=0,y=0)
 canvas1.pack()
 
 foo = pandas.read_csv("Flashcards.csv")
@@ -21,18 +24,18 @@ def newRand():
     label2.destroy()
     global label1
     label1.destroy()
-    label1 = tk.Label(root, text=answers[i], fg='green', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
-    label2= tk.Label(root, text=questions[i], fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
-    canvas1.create_window(750,100, window=label2)
+    label1 = tk.Label(root, text=answers[i], bg='white', fg='blue', font=('helvetica', 20, 'bold'), wraplength=750, justify="left")
+    label2= tk.Label(root, text=questions[i], bg='white', fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="left")
+    canvas1.create_window(750,180, window=label2)
 
 def showAns():
     global label1
-    canvas1.create_window(750,400, window=label1)
+    canvas1.create_window(750,420, window=label1)
 
 global label1
-label1 = tk.Label(root, text=answers[i], fg='green', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
-label2= tk.Label(root, text=questions[i], fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
-canvas1.create_window(750,100, window=label2)
+label1 = tk.Label(root, text=answers[i], bg='white', fg='blue', font=('helvetica', 20, 'bold'), wraplength=750, justify="left")
+label2= tk.Label(root, text=questions[i],bg='white', fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
+canvas1.create_window(750,180, window=label2)
 
 def rightClick(_):
     newRand()
