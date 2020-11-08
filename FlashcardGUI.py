@@ -24,18 +24,18 @@ def newRand():
     label2.destroy()
     global label1
     label1.destroy()
-    label1 = tk.Label(root, text=answers[i], bg='white', fg='blue', font=('helvetica', 20, 'bold'), wraplength=750, justify="left")
-    label2= tk.Label(root, text=questions[i], bg='white', fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="left")
-    canvas1.create_window(750,180, window=label2)
+    label1 = tk.Label(root, text=answers[i], bg='white', fg='blue', font=('helvetica', 20, 'bold'), wraplength=1200, justify="center")
+    label2= tk.Label(root, text=questions[i], bg='white', fg='red', font=('helvetica', 20, 'bold'), wraplength=1200, justify="center")
+    canvas1.create_window(760,240, window=label2)
 
 def showAns():
     global label1
-    canvas1.create_window(750,420, window=label1)
+    canvas1.create_window(760,480, window=label1)
 
 global label1
-label1 = tk.Label(root, text=answers[i], bg='white', fg='blue', font=('helvetica', 20, 'bold'), wraplength=750, justify="left")
-label2= tk.Label(root, text=questions[i],bg='white', fg='red', font=('helvetica', 20, 'bold'), wraplength=750, justify="center")
-canvas1.create_window(750,180, window=label2)
+label1 = tk.Label(root, text=answers[i], bg='white', fg='blue', font=('helvetica', 20, 'bold'), wraplength=1200, justify="center")
+label2= tk.Label(root, text=questions[i],bg='white', fg='red', font=('helvetica', 20, 'bold'), wraplength=1200, justify="center")
+canvas1.create_window(760,240, window=label2)
 
 def rightClick(_):
     newRand()
